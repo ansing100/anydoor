@@ -1,0 +1,27 @@
+{
+    "name": "anydoor",
+    "version": "0.0.1",
+    "description": "tiny nodejs web server",
+    "main": "buld/index.js",
+    "scripts": {
+        "lint": "eslint .",
+        "fix": "eslint --fix ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ansing100/anydoor"
+    },
+    "keywords": [
+        "static",
+        "webserver"
+    ],
+    "author": "ansing100",
+    "email": "ansing100@qq.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ansing100/anydoor"
+    },
+    "homepage": "https://github.com/ansing100/anydoor",
+    "devDependencies": {
+    }
+}
