@@ -1,44 +1,35 @@
 const http = require('http');
 const chalk = require('chalk');
-const conf = require('./src/config/defaultConfig');
+const conf = require('./config/defaultConfig');
 const path = require('path');
-const route = require('./src/helper/router');
+const route = require('./helper/router');
+const openUrl = require('./helper/openUrl');
 
-const server = http.createServer((req, res) => {
-  const filePath = path.join(conf.root, req.url);
+class Server {
+  constructor(config) {
+    console.info('config:'+config.port);
+    console.info('conf:'+conf.port);
+    this.conf = Object.assign({}, conf, config);
+  }
 
-  route(req,res,filePath);
+  start() {
+    const server = http.createServer((req, res) => {
+      const filePath = path.join(this.conf.root, req.url);
 
-  // fs.stat(filePath, (err, stats) => {
-  //   if (err) {
-  //     res.statusCode = 404;
-  //     res.setHeader('Content-Type', 'text/plain');
-  //     res.end(`${filePath} is not a directory or file.`);
-  //     return;
-  //   }
-  //   if (stats.isFile()) {
-  //     res.statusCode = 200;
-  //     res.setHeader('Content-Type', 'text/plain');
-  //     fs.createReadStream(filePath).pipe(res);
-  //     // fs.readFile(filePath,(err,data)=>{
-  //     //   res.end(data);
-  //     // });
-  //
-  //   } else {
-  //     fs.readdir(filePath, (err, files) => {
-  //       res.statusCode = 200;
-  //       res.setHeader('Content-Type', 'text/plain');
-  //       res.end(files.join(' '));
-  //     });
-  //   }
-  // });
+      route(req, res, filePath,this.conf);
+      console.info(filePath);
+    });
 
-  // res.statusCode = 200;
-  // res.setHeader('Content-Type', 'text/html');
-  console.info(filePath);
-});
+    console.info('port:'+this.conf.port);
+    console.info('host:'+this.conf.hostname);
 
-server.listen(conf.port, conf.hostname, () => {
-  const addr = `http://${conf.hostname}:${conf.port}`;
-  console.info(`Server started at ${chalk.green(addr)}`);
-});
+    server.listen(this.conf.port, this.conf.hostname, () => {
+      const addr = `http://${this.conf.hostname}:${this.conf.port}`;
+      console.info(`Server started at ${chalk.green(addr)}`);
+      openUrl(addr);
+    });
+
+  }
+}
+
+module.exports = Server;
