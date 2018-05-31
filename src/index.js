@@ -20,7 +20,7 @@ const argv = yargs.usage('anywhere [options]').option('p', {
   .help()
   .argv;
 
-console.info('argv:'+argv.port);
-console.info(JSON.stringify(argv));
+// console.info('argv:'+argv.port);
+// console.info(JSON.stringify(argv));
 const server = new Server(argv);
 server.start();

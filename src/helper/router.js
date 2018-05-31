@@ -31,7 +31,7 @@ module.exports = async function (req, res, filePath,config) {
       if (isFresh(stats,req,res)){
         res.statusCode = 304;
         res.end();
-        console.info('这次返回的是缓存');
+        // console.info('这次返回的是缓存');
         return;
       }
 
@@ -59,7 +59,7 @@ module.exports = async function (req, res, filePath,config) {
       if(filePath.match(config.compress)){
 
         rs = compress(rs,req,res);
-        console.info('compressing...');
+        // console.info('compressing...');
       }
       rs.pipe(res);
 

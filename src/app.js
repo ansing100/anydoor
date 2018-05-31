@@ -7,8 +7,8 @@ const openUrl = require('./helper/openUrl');
 
 class Server {
   constructor(config) {
-    console.info('config:'+config.port);
-    console.info('conf:'+conf.port);
+    // console.info('config:'+config.port);
+    // console.info('conf:'+conf.port);
     this.conf = Object.assign({}, conf, config);
   }
 
@@ -17,7 +17,7 @@ class Server {
       const filePath = path.join(this.conf.root, req.url);
 
       route(req, res, filePath,this.conf);
-      console.info(filePath);
+      // console.info(filePath);
     });
 
     console.info('port:'+this.conf.port);
