@@ -1,34 +1,46 @@
 {
-  "name": "anydoor100",
-  "version": "0.1.2",
-  "description": "tiny nodejs web server",
-  "main": "src/app.js",
+    "name": "anydoor100",
+    "version": "0.1.2",
+    "description": "tiny nodejs web server",
+    "main": "src/app.js",
     "bin": {
-        "anydoor":"bin/anydoor"
+        "anydoor": "bin/anydoor"
     },
     "scripts": {
-    "lint": "eslint .",
-    "fix": "eslint --fix ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ansing100/anydoor"
-  },
-  "keywords": [
-    "static",
-    "webserver"
-  ],
-  "author": "ansing100",
-  "email": "ansing100@qq.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ansing100/anydoor"
-  },
-  "homepage": "https://github.com/ansing100/anydoor",
-  "devDependencies": {},
-  "dependencies": {
-    "nodejs": "0.0.0",
-    "server-static": "^2.0.5",
-    "yargs": "^11.0.0"
-  }
+        "lint": "eslint .",
+        "fix": "eslint --fix .",
+        "gulp": "gulp",
+        "watch": "gulp watch",
+        "babel": "babel src/**/*.js -d build/script"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ansing100/anydoor"
+    },
+    "keywords": [
+        "static",
+        "webserver"
+    ],
+    "author": "ansing100",
+    "email": "ansing100@qq.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ansing100/anydoor"
+    },
+    "homepage": "https://github.com/ansing100/anydoor",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "gulp-babel": "^7.0.1"
+    },
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.4.0",
+        "gulp-less": "^3.5.0",
+        "handlebars": "^4.0.11",
+        "nodejs": "0.0.0",
+        "server-static": "^2.0.5",
+        "yargs": "^11.0.0"
+    }
 }
