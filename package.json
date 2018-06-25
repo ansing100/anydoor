@@ -16,7 +16,7 @@
         "webpack": "webpack",
         "test": "mocha test/assert.js",
         "nyc": "nyc --require babel-core/register  node_modules/.bin/mocha test/assert.js",
-        "cover": "babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha ./test/assert.js"
+        "cover": "babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha --reporter ./test/assert.js"
     },
     "repository": {
         "type": "git",

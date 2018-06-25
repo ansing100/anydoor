@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/ansing100/anydoor.svg?branch=master)](https://travis-ci.com/ansing100/anydoor)
+[![codecov](https://codecov.io/gh/ansing100/anydoor/branch/master/graph/badge.svg)](https://codecov.io/gh/ansing100/anydoor)
 
 # anydoor
 Tiny NodeJS Static Web Server.

@@ -6,5 +6,8 @@ brancher:
   only:
     - "dev"
     - "master"
-  script:
-    - "npm run nyc"
+install:
+  - "npm install -g codecov"
+script:
+  - "npm run nyc"
+  - "codecov"
