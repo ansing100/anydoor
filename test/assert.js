@@ -2,7 +2,7 @@ const {math,max}= require('./math');
 
 const {should,expect} = require('chai');
 
-import assert from 'assert';
+const assert = require('assert');
 
 
 
