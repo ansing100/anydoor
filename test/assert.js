@@ -1,30 +1,46 @@
-const {add,mul} = require('./math');
+const {math,max}= require('./math');
 
-const {should,expect,assert} = require('chai');
+const {should,expect} = require('chai');
 
-console.info(add(2,3));
+import assert from 'assert';
 
-console.info(mul(2,3));
 
-should();
-add(2,3).should.equal(5);
 
-expect(add(2,3)).to.equal(5);
+// console.info(add(2,3));
 
-assert.equal(mul(2,3),6);
+// console.info(mul(2,3));
 
+// should();
+// add(2,3).should.equal(5);
+//
+// expect(add(2,3)).to.equal(5);
+//
+// assert.equal(mul(2,3),6);
+
+//
+// describe('#math',()=>{
+//   describe('add test',function () {
+//     it.only('should return 5 ', function () {
+//       expect(add(2,3)).to.be.equal(5);
+//     });
+//   });
+//
+//   describe('mul test',function () {
+//     it('should return 6 ', function () {
+//       expect(mul(2,3)).to.be.equal(6);
+//     });
+//   })
+// });
+
+const a=3;
+const b=2;
+
+console.info('a+b=',a+b);
 
 describe('#math',()=>{
-  describe('add test',function () {
-    it.only('should return 5 ', function () {
-      expect(add(2,3)).to.be.equal(5);
-    });
+  it('should return 5', function () {
+    assert.equal(math.add(a,b),5);
   });
-  describe('mul test',function () {
-    it('should return 6 ', function () {
-      expect(mul(2,3)).to.be.equal(6);
-    });
-  })
 });
 
 // describe('加法函数的测试', function() {
