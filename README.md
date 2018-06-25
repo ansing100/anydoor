@@ -3,6 +3,7 @@
 
 # anydoor
 Tiny NodeJS Static Web Server.
+添加持续集成和测试覆盖率。
 
 ## 安装
 ```
