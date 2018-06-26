@@ -15,8 +15,29 @@
         "start": "webpack --config webpack.config.js",
         "webpack": "webpack",
         "test": "mocha test/assert.js",
+        "test2": "nyc mocha",
         "nyc": "nyc --require babel-core/register  node_modules/.bin/mocha test/assert.js",
         "cover": "babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha --reporter ./test/assert.js"
+    },
+    "nyc": {
+        "check-coverage": true,
+        "per-file": true,
+        "lines": 50,
+        "statements": 50,
+        "functions": 50,
+        "branches": 50,
+        "include": [
+            "test/assert.js"
+        ],
+        "exclude": [
+            "src/**/*.spec.js"
+        ],
+        "reporter": [
+            "lcov",
+            "text-summary"
+        ],
+        "cache": false,
+        "all": true
     },
     "repository": {
         "type": "git",

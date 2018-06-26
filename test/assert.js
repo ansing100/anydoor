@@ -39,21 +39,25 @@ console.info('a+b=',a+b);
 
 describe('#math',()=>{
   it('should return 5', function () {
-    assert.equal(math.add(a,b),5);
+    if(a>0){
+      assert.equal(math.add(a,b),5);
+    }else{
+      assert.equal(math.add(a,b),-1);
+    }
   });
 });
 
-// describe('加法函数的测试', function() {
-//   it('1 加 1 应该等于 2', function() {
-//     expect(add(1, 1)).to.be.equal(2);
-//   });
-// });
-//
-//
-// describe('Array', function() {
-//   describe('#indexOf()', function() {
-//     it('should return -1 when the value is not present', function() {
-//       assert.equal([1,2,3].indexOf(4), -1);
-//     });
-//   });
-// });
+describe('加法函数的测试', function() {
+  it('1 加 1 应该等于 2', function() {
+    expect(math.add(1, 1)).to.be.equal(2);
+  });
+});
+
+
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
+    });
+  });
+});
